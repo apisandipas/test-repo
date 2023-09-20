@@ -5,6 +5,8 @@ on:
       - "main"
 jobs:
   version_bump:
+    permissions:
+      contents: write
     name: "Bump Version on master"
     runs-on: ubuntu-latest
     steps:
