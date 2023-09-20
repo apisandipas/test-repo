@@ -1,13 +1,13 @@
-name: EAS Build
+name: Test Repo Build
 on: workflow_dispatch
 jobs:
   version_bump:
-    name: 'Bump Version on master'
+    name: "Bump Version on master"
     runs-on: ubuntu-latest
-    steps: 
-      - name: 'Automated Version Bump'
+    steps:
+      - name: "Automated Version Bump"
         id: version-bump
-        uses: 'phips28/gh-action-bump-version@master'
+        uses: "phips28/gh-action-bump-version@master"
         with:
           skip-tag: true
         env:
