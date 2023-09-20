@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+set -e
+
+if [-f "package.json"]; then
+    version=$(jq -r '.version' package.json)
+else 
+    echo "`package.json` not found in this directory"
+    exit 1
+fi
+
+build_number="1"
+version_str="${version}-${build_number}"
+
+git tag -a "${version_str}" -m "v${version_str}"
