@@ -1,10 +1,19 @@
 name: Test Repo Build
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - "main"
 jobs:
   version_bump:
     name: "Bump Version on master"
     runs-on: ubuntu-latest
     steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v2"
+        with:
+          ref: ${{ github.ref }}
+      - name: "cat package.json"
+        run: cat ./package.json
       - name: "Automated Version Bump"
         id: version-bump
         uses: "phips28/gh-action-bump-version@master"
@@ -12,3 +21,5 @@ jobs:
           skip-tag: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: "cat package.json"
+        run: cat ./package.json
