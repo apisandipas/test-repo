@@ -1,0 +1,19 @@
+name: Test Repo Build
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "develop"
+jobs:
+  tag_release:
+    permissions:
+      contents: write
+    name: "Tag preview release"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v4"
+        with:
+          ref: main
+      - name: "🏷️ Create new git tag"
+        run: ./scripts/tag-preview-release
