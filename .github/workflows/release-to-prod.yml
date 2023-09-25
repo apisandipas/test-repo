@@ -1,4 +1,4 @@
-name: Test Repo Build
+name: Release to Production Env
 on:
   workflow_dispatch:
   push:
@@ -33,4 +33,4 @@ jobs:
         with:
           ref: main
       - name: "🏷️ Create new git tag"
-        run: ./scripts/tagme
+        run: ./scripts/tag-release
