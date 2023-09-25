@@ -1,4 +1,4 @@
-name: Test Repo Build
+name: Release to Production Env
 on:
   workflow_dispatch:
   push:
