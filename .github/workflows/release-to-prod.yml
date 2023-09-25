@@ -34,7 +34,7 @@ jobs:
     #       git push -u origin develop
     #       git push --tags
   tag_release:
-    # needs: [version_bump]
+    needs: [version_bump]
     permissions:
       contents: write
     name: "Tag new release"
