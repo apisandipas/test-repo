@@ -21,13 +21,6 @@ jobs:
           npm version patch
           git push -u origin develop
           git push --tags
-      # - name: "Automated Version Bump"
-      #   id: version-bump
-      #   uses: "phips28/gh-action-bump-version@master"
-      #   with:
-      #     skip-tag: true
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   tag_release:
     needs: [version_bump]
     permissions:
