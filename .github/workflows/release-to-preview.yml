@@ -13,7 +13,5 @@ jobs:
     steps:
       - name: "Checkout source code"
         uses: "actions/checkout@v4"
-        with:
-          ref: main
       - name: "🏷️ Create new git tag"
         run: ./scripts/tag-preview-release
