@@ -19,6 +19,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           npm version patch
+          git push -u origin develop
       # - name: "Automated Version Bump"
       #   id: version-bump
       #   uses: "phips28/gh-action-bump-version@master"
